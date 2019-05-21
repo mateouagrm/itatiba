@@ -15,9 +15,8 @@ class CreatePropuestaItemTable extends Migration
     {
         Schema::create('propuesta_item', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_presupuesto');
-            $table->unsignedInteger('id_item');
-            $table->timestamps();
+            $table->unsignedInteger('id_presupuesto')->nullable();
+            $table->unsignedInteger('id_item')->nullable();
         });
     }
 

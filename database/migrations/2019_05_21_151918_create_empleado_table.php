@@ -15,11 +15,11 @@ class CreateEmpleadoTable extends Migration
     {
         Schema::create('empleado', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->string('carnet');
-            $table->string('cargo');
-            $table->double('salario');
+            $table->string('nombre')->nullable();
+            $table->string('apellido')->nullable();
+            $table->string('carnet')->nullable();
+            $table->string('cargo')->nullable();
+            $table->double('salario')->nullable();
         });
     }
 

@@ -15,9 +15,8 @@ class CreateFacturaItemTable extends Migration
     {
         Schema::create('factura_item', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_factura');
-            $table->unsignedInteger('id_item');
-            $table->timestamps();
+            $table->unsignedInteger('id_factura')->nullable();
+            $table->unsignedInteger('id_item')->nullable();
         });
     }
 

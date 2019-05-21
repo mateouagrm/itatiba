@@ -15,10 +15,10 @@ class CreateProveedorTable extends Migration
     {
         Schema::create('proveedor', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->string('carnet');
-            $table->string('nit');
+            $table->string('nombre')->nullable();
+            $table->string('apellido')->nullable();
+            $table->string('carnet')->nullable();
+            $table->string('nit')->nullable();
         });
     }
 

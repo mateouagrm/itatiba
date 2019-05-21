@@ -15,9 +15,9 @@ class CreateFacturaTable extends Migration
     {
         Schema::create('factura', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('fecha');
-            $table->double('costo_total');
-            $table->unsignedInteger('id_proveedor');
+            $table->string('fecha')->nullable();
+            $table->double('costo_total')->nullable();
+            $table->unsignedInteger('id_proveedor')->nullable();
             $table->timestamps();
         });
     }

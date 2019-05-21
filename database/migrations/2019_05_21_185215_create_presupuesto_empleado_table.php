@@ -15,9 +15,8 @@ class CreatePresupuestoEmpleadoTable extends Migration
     {
         Schema::create('presupuesto_empleado', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_presupuesto');
-            $table->unsignedInteger('id_empleado');
-            $table->timestamps();
+            $table->unsignedInteger('id_presupuesto')->nullable();
+            $table->unsignedInteger('id_empleado')->nullable();
         });
     }
 

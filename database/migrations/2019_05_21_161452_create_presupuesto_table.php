@@ -15,14 +15,14 @@ class CreatePresupuestoTable extends Migration
     {
         Schema::create('presupuesto', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('fecha');
-            $table->string('fase_obra');
-            $table->string('estado');
-            $table->double('costo_material');
-            $table->double('costo_personal');
-            $table->double('ganancia');
-            $table->unsignedInteger('id_obra');
-            $table->unsignedInteger('id_cliente');
+            $table->string('fecha')->nullable();
+            $table->string('fase_obra')->nullable();
+            $table->string('estado')->nullable();
+            $table->double('costo_material')->nullable();
+            $table->double('costo_personal')->nullable();
+            $table->double('ganancia')->nullable();
+            $table->unsignedInteger('id_obra')->nullable();
+            $table->unsignedInteger('id_cliente')->nullable();
         });
     }
 
