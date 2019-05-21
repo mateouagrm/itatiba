@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMaquinariaProveedorTable extends Migration
+class CreatePresupuestoEmpleadoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateMaquinariaProveedorTable extends Migration
      */
     public function up()
     {
-        Schema::create('maquinaria_proveedor', function (Blueprint $table) {
+        Schema::create('presupuesto_empleado', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_maquinaria');
-            $table->unsignedInteger('id_proveedor');
+            $table->unsignedInteger('id_presupuesto');
+            $table->unsignedInteger('id_empleado');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateMaquinariaProveedorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maquinaria_proveedor');
+        Schema::dropIfExists('presupuesto_empleado');
     }
 }

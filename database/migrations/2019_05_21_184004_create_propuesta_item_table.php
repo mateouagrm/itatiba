@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateObraMaquinariaTable extends Migration
+class CreatePropuestaItemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateObraMaquinariaTable extends Migration
      */
     public function up()
     {
-        Schema::create('obra_maquinaria', function (Blueprint $table) {
+        Schema::create('propuesta_item', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_obra');
-            $table->unsignedInteger('id_maquinaria');
+            $table->unsignedInteger('id_presupuesto');
+            $table->unsignedInteger('id_item');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateObraMaquinariaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('obra_maquinaria');
+        Schema::dropIfExists('propuesta_item');
     }
 }

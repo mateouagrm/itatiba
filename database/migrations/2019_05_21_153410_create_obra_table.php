@@ -17,8 +17,6 @@ class CreateObraTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->double('costo');
-            $table->double('ganancia');
         });
     }
 

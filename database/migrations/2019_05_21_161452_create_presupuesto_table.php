@@ -18,6 +18,9 @@ class CreatePresupuestoTable extends Migration
             $table->string('fecha');
             $table->string('fase_obra');
             $table->string('estado');
+            $table->double('costo_material');
+            $table->double('costo_personal');
+            $table->double('ganancia');
             $table->unsignedInteger('id_obra');
             $table->unsignedInteger('id_cliente');
         });
