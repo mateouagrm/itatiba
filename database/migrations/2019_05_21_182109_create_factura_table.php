@@ -18,7 +18,6 @@ class CreateFacturaTable extends Migration
             $table->string('fecha')->nullable();
             $table->double('costo_total')->nullable();
             $table->unsignedInteger('id_proveedor')->nullable();
-            $table->timestamps();
         });
     }
 
