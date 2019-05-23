@@ -12,6 +12,6 @@ class Empleado extends Model
     public $timestamps=false;
 
     protected $fillable =[
-        'nombre', 'apellido' , 'carnet','cargo','salario'
+        'nombre', 'apellido' , 'carnet','cargo'
     ];
 }

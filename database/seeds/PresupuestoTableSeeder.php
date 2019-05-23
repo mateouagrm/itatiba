@@ -18,7 +18,6 @@ class PresupuestoTableSeeder extends Seeder
             'fase_obra' => "neutro",
             'estado' => "iniciado",
             'costo_material' => 2000,
-            'costo_personal' => 500,
             'ganancia' => 3250,
             'id_obra' => 1,
             'id_cliente' => 2,
@@ -28,7 +27,6 @@ class PresupuestoTableSeeder extends Seeder
         $presupuesto1->items()->sync([1,2,3,19]);
 
         $this->actualizarCostoMaterial($presupuesto1->id);
-        $this->actualizarCostoEmpleado($presupuesto1->id);
         $this->ganancia($presupuesto1->id);
 
         $presupuesto2 = Presupuesto::create([
@@ -36,7 +34,6 @@ class PresupuestoTableSeeder extends Seeder
             'fase_obra' => "neutro",
             'estado' => "iniciado",
             'costo_material' => 2000,
-            'costo_personal' => 500,
             'ganancia' => 3250,
             'id_obra' => 2,
             'id_cliente' => 3,
@@ -46,7 +43,6 @@ class PresupuestoTableSeeder extends Seeder
         $presupuesto2->items()->sync([1,2,3,4,5,6,7,12,19]);
 
         $this->actualizarCostoMaterial($presupuesto2->id);
-        $this->actualizarCostoEmpleado($presupuesto2->id);
         $this->ganancia($presupuesto2->id);
 
         $presupuesto3 = Presupuesto::create([
@@ -54,7 +50,6 @@ class PresupuestoTableSeeder extends Seeder
             'fase_obra' => "neutro",
             'estado' => "iniciado",
             'costo_material' => 2000,
-            'costo_personal' => 500,
             'ganancia' => 3250,
             'id_obra' => 2,
             'id_cliente' => 3,
@@ -64,7 +59,6 @@ class PresupuestoTableSeeder extends Seeder
         $presupuesto3->items()->sync([4,5,6,7,12,13,14,19]);
 
         $this->actualizarCostoMaterial($presupuesto3->id);
-        $this->actualizarCostoEmpleado($presupuesto3->id);
         $this->ganancia($presupuesto3->id);
 
 
@@ -80,19 +74,9 @@ class PresupuestoTableSeeder extends Seeder
         $presupuesto->update();
     }
 
-    public function actualizarCostoEmpleado($id){
-        $presupuesto = Presupuesto::find($id);
-        $cantidad = 0;
-        foreach ($presupuesto->empleados as $empleado){
-            $cantidad+= $empleado->salario;
-        }
-        $presupuesto->costo_personal = $cantidad;
-        $presupuesto->update();
-    }
-
     public function ganancia($id){
         $presupuesto = Presupuesto::find($id);
-        $costo = $presupuesto->costo_material + $presupuesto->costo_personal;
+        $costo = $presupuesto->costo_material;
         $costo += 0.3* $costo;
         $presupuesto->ganancia = $costo;
         $presupuesto->update();

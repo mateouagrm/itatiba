@@ -19,7 +19,6 @@ class CreateEmpleadoTable extends Migration
             $table->string('apellido')->nullable();
             $table->string('carnet')->nullable();
             $table->string('cargo')->nullable();
-            $table->double('salario')->nullable();
         });
     }
 

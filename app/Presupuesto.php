@@ -12,7 +12,7 @@ class Presupuesto extends Model
     public $timestamps=false;
 
     protected $fillable =[
-        'fecha','fase_obra','estado','costo_material','costo_personal','ganancia','id_obra','id_cliente'
+        'fecha','fase_obra','estado','costo_material','ganancia','id_obra','id_cliente'
     ];
 
 

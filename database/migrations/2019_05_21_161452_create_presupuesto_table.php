@@ -19,7 +19,6 @@ class CreatePresupuestoTable extends Migration
             $table->string('fase_obra')->nullable();
             $table->string('estado')->nullable();
             $table->double('costo_material')->nullable();
-            $table->double('costo_personal')->nullable();
             $table->double('ganancia')->nullable();
             $table->unsignedInteger('id_obra')->nullable();
             $table->unsignedInteger('id_cliente')->nullable();
