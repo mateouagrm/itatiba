@@ -1,0 +1,17 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Cliente extends Model
+{
+    protected $table='cliente';
+    protected $primarykey='id';
+
+    public $timestamps=false;
+    
+    protected $fillable =[
+    'nombre', 'telefono' , 'nit_carnet'
+    ];
+}
